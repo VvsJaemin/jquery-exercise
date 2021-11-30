@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<body>
+<h1>jQuery variable</h1>
+<ul>
+    <li>에스프레소</li>
+    <li><b>아메리카노</b></li>
+    <li>카페라떼</li>
+</ul>
+<p id="length"></p>
+
+<h1>jQuery input</h1>
+<div><input type="checkbox" id="espresso"><label for="espresso">에스프레소</label></div>
+<div><input type="checkbox" id="americano"><label for="americano">아메리카노</label></div>
+<div><input type="checkbox" id="caffeLatte"><label for="caffeLatte">카페라떼</label></div>
+<button>다 선택하면 클릭해주세요.</button>
+<p id="count"></p>
+<script>
+    /*
+       필터링에 사용할 수 있는 선택자
+   선택자	예제              	                설명
+   :eq(n)	$("ul li:eq(3)")	                선택한 요소 중에서 인덱스가 n인 요소를 선택함.
+   :gt(n)	$("ul li:gt(3)")	                선택한 요소 중에서 인덱스가 n보다 큰 요소를 모두 선택함.
+   :lt(n)	$("ul li:lt(3)")	                선택한 요소 중에서 인덱스가 n보다 작은 요소를 모두 선택함.
+   :even	$("tr:even")	                    선택한 요소 중에서 인덱스가 짝수인 요소를 모두 선택함.
+   :odd	$("tr:odd")	                        선택한 요소 중에서 인덱스가 홀수인 요소를 모두 선택함.
+   :first	$("p:first")	                    선택한 요소 중에서 첫 번째 요소를 선택함.
+   :last	$("p:last")	                        선택한 요소 중에서 마지막 요소를 선택함.
+   :animated	$(":animated")	                선택한 요소 중에서 애니메이션 효과가 실행 중인 요소를 모두 선택함.
+   :header	$(":header")	                    선택한 요소 중에서 <h1>부터 <h6>까지의 요소를 모두 선택함.
+   :lang(언어)	$("p:lang(ko)")	                선택한 요소 중에서 지정한 언어의 요소를 모두 선택함.
+   :not(선택자)	$("input:not(:empty)")	        선택한 요소 중에서 지정한 선택자와 일치하지 않는 요소를 모두 선택함.
+   :root	$(":root")	                        선택한 요소 중에서 최상위 루트 요소를 선택함.
+   target	$("a[target='_blank']")	            선택한 요소 중에서 웹 페이지 URI의 fragment 식별자와 일치하는 요소를 모두 선택함.
+   :contains(텍스트)	$(":contains('Hello')")	선택한 요소 중에서 지정한 텍스트를 포함하는 요소를 모두 선택함.
+   :has(선택자)	$("p:has(span)")	            선택한 요소 중에서 지정한 선택자와 일치하는 자손 요소를 갖는 요소를 모두 선택함.
+   :empty	$(":empty")    	                    선택한 요소 중에서 자식 요소를 가지고 있지 않은 요소를 모두 선택함.
+   :parent	$(":parent")	                    선택한 요소 중에서 자식 요소를 가지고 있는 요소를 모두 선택함*/
+    $(function () {
+        var coffees = $("li");
+        $("#length").text("커피의 종류는 총" + coffees.length + "가지");
+
+        $("li:has(b)").append("- 추천 메뉴입니다.")
+        /*
+        특정 <input>요소를 선택할 수 있는 선택자
+        선택자	    예제	                                    설명
+        :button	    $(":button")	                    type 속성값이 "button"인 요소를 모두 선택한다.
+        :checkbox	$(":checkbox")	                    type 속성값이 "checkbox"인 요소를 모두 선택한다.
+        :file	    $(":file")	                        type 속성값이 "file"인 요소를 모두 선택한다.
+        :image	    $(":image")	                        type 속성값이 "image"인 요소를 모두 선택한다.
+        :password	$(":password")	                    type 속성값이 "password"인 요소를 모두 선택한다.
+        :radio	    $(":radio")	                        type 속성값이 "radio"인 요소를 모두 선택한다.
+        :reset	    $(":reset")	                        type 속성값이 "reset"인 요소를 모두 선택한다.
+        :submit	    $(":submit")	                    type 속성값이 "submit"인 요소를 모두 선택한다.
+        :text	    $(":text")	                        type 속성값이 "text"인 요소를 모두 선택한다.
+        :input	    $(":input")	                        <input>, <textarea>, <select>, <button>요소를 모두 선택한다.
+        :checked	$(":checked")	                    type 속성값이 "checkbox" 또는 "radio"인 요소 중에서 체크되어 있는 요소를 모두 선택한다.
+        :selected	$(":selected")	                    <option>요소 중에서 선택된 요소를 모두 선택한다.
+        :focus	    $(":focus")	                        현재 포커스가 가지고 있는 요소를 선택한다.
+        :disabled	$(":disabled")	                    비활성화되어있는 요소를 모두 선택한다.
+        :enabled	$(":enabled")	                    활성화되어있는 요소를 모두 선택한다.*/
+        $("button").on("click", function () {
+            var checked = $(":checked");
+            $("#count").text("선택한 총 커피는 " + checked.length + "가지");
+        });
+    });
+
+</script>
+</body>
+</html>

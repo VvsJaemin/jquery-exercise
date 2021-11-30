@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<body>
+<h1>jQuery .html() 메소드</h1>
+<p id="hello">안녕하세요. 박재민입니다.</p>
+<button>버튼을 클릭하면 위 문장이 아래에 그대로 표시됩니다.</button>
+<p id="newText"></p>
+
+<h1>jQuery method chaining</h1>
+<ul>
+    <li>에스프레소</li>
+    <li>아메리카노</li>
+    <li>카페라떼</li>
+</ul>
+<p id="length"></p>
+
+<h1>jQuery .attr()</h1>
+<img src="" width="128" height="128">
+<p></p>
+<button>이미지 크기 변경</button>
+<!--선택된 요소에 접근 (getter, setter) -->
+<!--
+getter 메소드는 선택된 요소에 접근하여 그 값을 읽어오기 위한 메소드
+getter 메소드는 아무런 인수를 전달하지 않고 호출
+setter 메소드는 선택된 요소에 접근하여 그 값을 설정하기 위한 메소드
+setter 메소드는 대입하고자 하는 값을 인수로 전달하여 호출-->
+    <script>
+        /* <h1>요소에 접근하여 그 값을 읽어들인 후, 아이디가 "text"인 요소의 값을 해당 값으로 설정*/
+        $(function () {
+            $("button").on("click", function () {
+                /*첫 번째.html() 메소드 호출에는 전달되는 인수가 없어서, 해당 HTML 요소에서 값을 읽어오는 getter 메소드로 사용*/
+                var newText = $("#hello").html();
+                /*두 번째.html() 메소드 호출에는 전달되는 인수가 있어서, 해당 HTML 요소에 새로운 문장을 설정하는 setter 메소드로 사용*/
+                $("#newText").html(newText);
+            });
+
+            /*대표적인 getter 메소드와 setter 메소드
+            *
+             메소드	    설명
+            .html()	    해당 요소의 HTML 콘텐츠를 반환하거나 설정한다.
+            .text()	    해당 요소의 텍스트 콘텐츠를 반환하거나 설정한다.
+            .width()	선택한 요소 중에서 첫 번째 요소의 너비를 픽셀 단위의 정수로 반환하거나 설정한다.
+            .height()	선택한 요소 중에서 첫 번째 요소의 높이를 픽셀 단위의 정수로 반환하거나 설정한다.
+            .attr()	    해당 요소의 명시된 속성의 속성값을 반환하거나 설정한다.
+            .position()	선택한 요소 중에서 첫 번째 요소에 대해 특정 위치에 존재하는 객체를 반환한다. (getter 메소드)
+            .val()	    <form>요소의 값을 반환하거나 설정한다.
+            */
+
+            /*메소드 체이닝
+            *setter 메소드는 선택된 '모든 요소'에 인수로 전달된 값을 설정한다.
+            그리고 선택된 모든 요소에 접근할 수 있는 또 다른 jQuery 객체를 반환
+            이렇게 반환된 jQuery 객체를 이용하면 메소드를 호출할 때마다 세미콜론(;)을 사용하지 않고도, 곧바로 이어서 다른 jQuery 메소드를 호출할 수 있다.
+            이런 방식으로 여러 개의 메소드가 연속으로 호출되는 것을 메소드 체이닝(method chaining)
+            * */
+
+            $("ul").find("li").eq(1).append("- 추천 메뉴입니다.")
+
+            $("button").on("click", function () {
+                //setter
+                $("img").width(300);
+                $("img").height(300);
+
+                //getter
+                var imgWidth = $("img").width();
+                var imgHeight = $("img").height();
+                $("p").html("가로" + imgWidth + "세로" + imgHeight);
+            });
+        });
+
+        $(function () {
+            $("button").click(function () {
+                /*.attr() 메소드는 선택한 요소의 특정 속성값을 반환하거나 설정하기 위해 사용*/
+                // setter
+                $("img").attr("width", "300");
+
+                //getter
+                var imgWidth = $("img").attr("width");
+                $("p").html("변경된 너비 : " + imgWidth);
+            });
+        });
+
+    </script>
+
+</body>
+</html>
