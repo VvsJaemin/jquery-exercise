@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<body>
+<h1>.insertBefore() 메소드</h1>
+<p>안녕하세요.</p>
+<button>문장 추가</button>
+<script>
+    $(function () {
+        var i = 0;
+        $("button").on("click", function () {
+            $("<div>" + (++i) + "번 째문장입니다.</div>").insertBefore("p");
+        });
+    });
+</script>
+</body>
+</html>

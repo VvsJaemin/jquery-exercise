@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<h1>.unwrap() 메소드</h1>
+<div id="container" class="wrap">
+    <p>안녕하세요</p>
+    <p>devkuma입니다.</p>
+    <p>반갑습니다.</p>
+</div>
+<br>
+<button>부모 요소 삭제</button>
+<script>
+    $(function () {
+        $("button").on("click", function () {
+            $("p").unwrap(); // <p> 요소의 부모 요소를 삭제한다.
+        });
+    });
+</script>
+</body>
+</html>

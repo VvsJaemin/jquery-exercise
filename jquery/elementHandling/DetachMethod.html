@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<h1>.detach() 메소드</h1>
+<p class="hello">안녕하세요.</p>
+<p>devkuma입니다.</p>
+<p class="hello">반갑습니다.</p>
+<button id="btnDetach">문장 삭제</button>
+<button id="btnRestore">문장 복구</button>
+
+<script>
+    $(function () {
+        $("p").on("click", function () {
+            $(this).toggleClass("wrap");
+        });
+        var data = null;
+        $("#btnDetach").on("click", function () {
+            data = $(".hello").detach(); // class가 "hello"인 요소를 모두 삭제함.
+        });
+        $("#btnRestore").on("click", function () {
+            $("p").after(data);// detach() 메소드로 삭제되었던 모든 요소를 다시 추가함.
+        });
+    });
+</script>
+</body>
+</html>

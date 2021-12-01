@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery .wrap() </title>
+    <style>
+        p { margin: 10px; border: 1px solid blue; }
+        .wrap { margin: 10px; border: 1px solid green; }
+    </style>
+</head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<body>
+<h1>.wrap() 메소드</h1>
+<p>안녕하세요.</p>
+<p>devkuma입니다.</p>
+<button>문장 감싸기</button>
+<script>
+    $(function () {
+        $("button").on("click", function () {
+            // $("p").wrap("<div class='wrap'></div>");
+            $("p").wrapAll("<div class='wrap'></div>");
+        });
+    });
+</script>
+</body>
+</html>

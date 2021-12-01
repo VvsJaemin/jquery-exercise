@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<body>
+<h1>.append() 메소드</h1>
+<ol id="list">
+    <li>첫 번째 아이템</li>
+    <li>두 번째 아이템</li>
+</ol>
+<button>아이템 추가</button>
+
+<h1>.prepend() 메소드</h1>
+<ol id="list2">
+    <li>첫 번째 아이템</li>
+    <li>두 번째 아이템</li>
+</ol>
+<button>아이템 추가</button>
+
+<h1>.appendTo() 메소드</h1>
+<p>안녕하세요.</p>
+<button>아이템 추가</button>
+
+<h1>.prependTo() 메소드</h1>
+<p>안녕하세요.</p>
+<button>아이템 추가</button>
+
+<h1>.before() 메소드</h1>
+<p id="i1">안녕하세요.</p>
+<button id="b1">문장 추가</button>
+<script>
+    $(function () {
+        $("button").on("click", function () {
+            $("#list").append("<li>새로 추가된 아이템 </li>");
+            $("#list2").prepend("<li>새로 추가된 아이템</li>");
+            $("<span>jQuery입니다.</span>").appendTo("p");
+            $("<span>jQuery입니다.</span>").prependTo("p");
+        });
+
+        var i = 0;
+        $("#b1").on("click", function () {
+            $("#i1").before("<div>" + (++i) + "번째 문장입니다. </div>");
+        });
+    });
+</script>
+</body>
+</html>

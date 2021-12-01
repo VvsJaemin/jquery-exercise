@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery .html() </title>
+    <style>
+        .wrap {
+            color: blue;
+        }
+    </style>
+
+</head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<body>
+<h1>.html() 메소드</h1>
+<p>안녕하세요.</p>
+<button>문장 변경</button>
+
+<h1>.text() 메소드</h1>
+<p id="id2">안녕하세요.</p>
+<button id="b1">문장 변경</button>
+
+<h1>현재 시간</h1>
+<div id="now"></div>
+<script>
+    $(function () {
+        $("button").on("click", function () {
+            $("p").html("<div class='wrap'>박재민입니다.</div>");
+        });
+    });
+
+    $(function () {
+        $("#b1").on("click", function () {
+            $("#id2").text("<div class='wrap'>박재민입니다.</div>");
+        });
+    });
+
+    $(function () {
+        $("#now").text(new Date());
+        setInterval(function () {
+            $("#now").text(new Date());
+        }, 1000);
+    });
+
+    /*.html() 메소드와 .text() 메소드의 차이점
+    * .html()는 선택한 요소의 내용에 html 태그 요소가 포함되어 있으면 태그를 적용하여 표시를 하지만, .text()인 경우는 html 태그를 적용하지않고 문장 그대로 표시를 하게 된다.
+    * */
+</script>
+</body>
+</html>
