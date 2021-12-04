@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .even { color: red; }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>.each() 메소드</h1>
+<ul>
+    <li>첫번째 아이템</li>
+    <li>두번째 아이템</li>
+    <li>세번째 아이템</li>
+</ul>
+
+<script>
+    $(function () {
+        $("li").each(function (index) {
+            if (index % 2 == 0) {
+                $(this).addClass("even");
+            }
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        p, div {
+            margin: 5px;
+            padding: 5px;
+            border: 2px solid green;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>.addBack() 메소드</h1>
+
+<div id="before">
+    <p>.addBack() 적용 전</p>
+    <p>안녕하세요. 데브쿠마입니다.</p>
+</div>
+
+<div id="after">
+    <p>.addBack() 적용 후</p>
+    <p>안녕하세요. 데브쿠마입니다.</p>
+</div>
+
+<script>
+    $(function (){
+        $("div#before").find("p").css({"backgroundColor": "aqua"})
+        $("div#after").find("p").css({"backgroundColor": "aqua"})
+    })
+</script>
+</body>
+</html>

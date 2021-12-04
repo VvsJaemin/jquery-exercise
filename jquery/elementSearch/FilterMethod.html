@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>jQuery .filter()</h1>
+<ul>
+    <li>에스프레소</li>
+    <li>아메리카노</li>
+    <li>카페라떼</li>
+    <li>콜드브루</li>
+</ul>
+<script>
+    $(function () {
+        $("li").filter(":even").css("background-color", "yellow");
+    });
+</script>
+</body>
+</html>

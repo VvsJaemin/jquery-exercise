@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .container * {
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>.contents() 메소드</h1>
+<p><button>링크 요소의 배경색 변경하기</button></p>
+<iframe src="https://www.naver.com" style="width:95%; height:400px;"></iframe>
+<script>
+    $(function () {
+        $("button").on("click", function () {
+            $("iframe").contents().find("a").css("backgroundColor", "#BADA55");
+        });
+    });
+</script>
+</body>
+</html>
