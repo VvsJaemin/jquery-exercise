@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<style>
+    .box {
+        border: 2px solid lightgrey;
+        width: 200px;
+        height: 100px;
+        overflow: scroll;
+
+        white-space:nowrap;
+    }
+</style>
+<body>
+<h1>.jQuery .scrollLeft() .scrollTop() getter</h1>
+
+<div class="box">
+    <p>안녕하세요. 박재민입니다.</p>
+    <p>스크롤을 움직이고, 아래 "스크롤 위치 구하기" 버튼을 클릭해 주세요.</p>
+    <p>그러면 위치 정보를 표시하게 됩니다.</p>
+</div>
+
+<button>스크롤 위치 구하기</button>
+<span></span>
+    <script>
+        $(function () {
+            $("button").on("click", function () {
+                var left = $(".box").scrollLeft();
+                var top = $(".box").scrollTop();
+                $("span").text("Left : " + left + ", Top : " + top);
+            });
+        });
+    </script>
+</body>
+</html>

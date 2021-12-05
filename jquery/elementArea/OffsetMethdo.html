@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<style>
+    div {
+        padding: 15px;
+    }
+    p {
+        margin-left: 10px;
+    }
+</style>
+<body>
+<h1>.offset() getter 메소드</h1>
+<div>
+    <p>안녕하세요. 박재민입니다.</p>
+</div>
+<button>요소의 위치 정보</button>
+<span></span>
+    <script>
+        $(function () {
+            $("button").on("click", function () {
+                var p = $("p").offset();
+                $("span").text("top :" + p.top + "xp, left :" + p.left + "xp");
+            });
+        });
+    </script>
+</body>
+</html>

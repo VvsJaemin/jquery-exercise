@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<style>
+    div {
+        width: 200px;
+        margin: 10px;
+        border: 1px solid red;
+    }
+</style>
+<body>
+<h1>.width() .height() 메소드 - 요소의 크기</h1>
+<div>버튼을 클릭하면 도큐먼트와 윈도우의 크기를 구합니다.</div>
+<p></p>
+<button>요소의 크기 구하기</button>
+    <script>
+        $(function () {
+            $("button").on("click", function () {
+                var str = "";
+                str += "document 너비는 " + $(document).width()+"px 이고 높이는" + $(document).height() + "px 이고, <br>";
+                str += "window 너비는 " + $(window).width()+"px 이고 높이는" + $(window).height() + "px 이다";
+                $("p").html(str);
+            });
+        });
+    </script>
+</body>
+</html>
