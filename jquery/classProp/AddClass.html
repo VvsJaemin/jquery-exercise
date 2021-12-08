@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery  </title>
+    <style>
+        .blue {
+            color: blue;
+        }
+    </style>
+</head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<body>
+<h1>.addClass() 클래스 추가</h1>
+<div id="one" class="">버튼을 누르면 클래스가  추가된다.</div>
+<div id="two" class="">글자색이 검은색으로 변한다.</div>
+<button id="btnAdd">클래스 추가</button>
+<script>
+    $(function() {
+        $("#btnAdd").on("click", function() {
+            $("#one, #two").addClass("blue");
+        });
+    });
+</script>
+</body>
+</html>

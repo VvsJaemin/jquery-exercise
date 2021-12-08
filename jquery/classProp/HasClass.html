@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .blue {
+            color: blue;
+        }
+    </style>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<h1>클래스 토글</h1>
+<div id="one" class="blue">버튼을 누르면 클래스가 포함되어 있는지를 확인할 수 있다.</div>
+<div id="two"></div>
+<button id="btn">클래스 포함 여부 확인</button>
+<script>
+    $(function () {
+        $("#btn").on("click", function () {
+            var result = $("#one").hasClass("blue")
+            $("#two").html(result);
+        });
+    });
+</script>
+</body>
+</html>
