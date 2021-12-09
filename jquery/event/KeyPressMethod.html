@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<style>
+</style>
+<body>
+<h1>jQuery .keypress()</h1>
+<input type="text"> 입력란에 키보드로 내용을 입력하세요.
+<p id="text"></p>
+<script>
+    $(function () {
+        var i = 0;
+        $("input").keypress(function () {
+            $("#text").text((++i) + "번 키보드가 눌렀습니다.")
+        });
+    });
+</script>
+</body>
+</html>
