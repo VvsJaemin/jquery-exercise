@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<h1>.toggle() 메소드</h1>
+<p>
+    <button id="btnToggle">문장 토글</button>
+</p>
+<div>안녕하세요. 박재민입니다.</div>
+<script>
+    $(function () {
+        $("#btnToggle").on("click", function () {
+            $("div").toggle();
+        });
+    });
+</script>
+</body>
+</html>

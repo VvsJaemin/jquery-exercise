@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+<h1>.stop() 메소드</h1>
+<p>
+    <button id="start">시작</button>
+    <button id="stop">중지</button>
+</p>
+<div></div>
+<script>
+    $(function () {
+        $("button#start").on("click", function () {
+            $("div").animate({width: 300, height: 300}, 3000);
+        });
+
+        $("button#stop").on("click", function () {
+            $("div").stop();
+        });
+    });
+</script>
+</body>
+</html>

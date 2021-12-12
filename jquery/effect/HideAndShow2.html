@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<h1>.hide() .show() 메소드</h1>
+<p>
+    <button id="btnHide">문장 숨기기</button>
+    <button id="btnShow">문장 표시하기</button>
+</p>
+<div>안녕하세요. 박재민입니다.</div>
+<script>
+    $(function () {
+        $("#btnHide").on("click", function () {
+            $("div").hide(1000);
+        });
+
+        $("#btnShow").on("click", function () {
+            $("div").show(1000);
+        });
+    });
+</script>
+</body>
+</html>
