@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<body>
+<h1>jQuery $.ajax()</h1>
+<button id="btn">데이터 요청하기</button>
+<script>
+    $(function () {
+        $("#btn").on("click", function () {
+            var jqxhr = $.ajax("/rest/1/pages/245")
+                .done(function () {
+                    alert("성공");
+                })
+                .fail(function () {
+                    alert("실패");
+                })
+            jqxhr.always(function () {
+                alert("두번째 성공")
+            });
+        });
+    });
+</script>
+</body>
+</html>
